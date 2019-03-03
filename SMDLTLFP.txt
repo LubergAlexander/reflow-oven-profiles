@@ -1,0 +1,36 @@
+Controleo3 Reflow Profile
+
+Name "Lead-free paste 138~C [ChipQuick SMDLTLFP]"
+# Datasheet: http://www.chipquik.com/datasheets/SMDLTLFP.pdf
+
+Deviation to abort 25C
+Maximum temperature 170C
+Close door over 1 second
+Stop timer
+
+Display "Waiting for oven to cool to 50~C"
+Wait until below 80C
+
+Display "Phase: Pre-soak"
+Ramp temperature to 90C in 90s
+Ramp temperature to 130C in 90s
+
+Display "Phase: Soak"
+Ramp temperature to 138C in 30s
+
+Display "Phase: Reflow"
+Ramp temperature to 160C in 30s
+
+Element duty cycle 0/0/0 # Turn off heating
+
+Display "Phase: Cooling"
+Open door over 10 seconds
+Wait until below 100C
+
+Display "Boards can be removed now"
+
+Play tune
+
+Display "Reflow complete!"
+
+Close door over 3 seconds
